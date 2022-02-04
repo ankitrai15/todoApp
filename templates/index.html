@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>TODO-List</title>
+        <link rel="stylesheet" href="/static/css/normalize.css" />
+        <link rel="stylesheet" href="/static/css/style.css" />
+    </head>
+    <body>
+        <div class="container-fluid">
+        <div class="container">
+            <h1>TODO APP</h1>
+            <form method="post" action="" class="add-group">
+            {% csrf_token %}
+            <input type="text" name="itemData" maxlength="20" required />
+            <button type="submit" formmethod="post" class="add-group-btn">
+                <span class="fas fa-plus-square"></span>
+            </button>
+            </form>
+            <div class="list">
+            {% for dt in rslt %}
+            <div class="list-items">
+                <p>{{dt.item_name}}</p>
+                <a href="/Delete/{{dt.id}}" class="dlt-btn">
+                <span class="far fa-trash-alt"></span>
+                </a>
+            </div>
+            {% endfor %}
+            </div>
+            <a href="/Clear/" class="clear-btn">CLEAR ALL</a>
+        </div>
+        </div>
+        <script
+        src="https://kit.fontawesome.com/05986572e9.js"
+        crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

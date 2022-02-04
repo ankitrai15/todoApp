@@ -1,0 +1,152 @@
+:root {
+  --cn-width: 35rem;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+::selection {
+  background: blue;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 5px;
+  background: white;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  line-height: 1.5;
+  background: grey;
+  color: white;
+}
+
+.container-fluid {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.container {
+  width: var(--cn-width);
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: calc((100% - (var(--cn-width))) / 2);
+  top: calc((100vh - 50rem) / 2);
+  background: indianred;
+}
+
+h1 {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.add-group {
+  margin: 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-group input {
+  padding: 5px 1rem;
+  width: 30rem;
+  margin-right: 1rem;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background: whitesmoke;
+}
+
+.add-group-btn {
+  background: indianred;
+  border: none;
+}
+
+.add-group-btn span {
+  font-size: 3rem;
+  color: white;
+}
+
+.list {
+  width: 100%;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.list-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 2rem 2rem;
+}
+
+.dlt-btn {
+  width: 3rem;
+  background: indianred;
+  border: none;
+}
+
+.dlt-btn span {
+  padding: 10px;
+  border-radius: 5px;
+  background: black;
+  color: white;
+}
+
+a.clear-btn {
+  width: 12rem;
+  margin: 5rem 0;
+  padding: 1rem;
+  font-size: 1.6rem;
+  word-spacing: 5px;
+  border-radius: 10px;
+  border: none;
+  background: black;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+@media (min-width: 767px) {
+  :root {
+    --cn-width: 60rem;
+  }
+
+  html {
+    font-size: 82%;
+  }
+
+  .add-group input {
+    width: 40rem;
+    margin-right: 2rem;
+  }
+
+  .list-items {
+    margin: 0 2.5rem 2rem;
+  }
+}
+
+@media (min-width: 998px) {
+  html {
+    font-size: 60%;
+  }
+}
